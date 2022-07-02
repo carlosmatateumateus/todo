@@ -39,7 +39,7 @@
             <a href="{% url 'home' %}" id="#">All</a>
             <a href="{% url 'active_completed' 'active' %}" id="#">Active</a>
             <a href="{% url 'active_completed' 'completed' %}" id="#">Completed</a>
-            <a href="#" id="#">Clear Completed</a>
+            <a href="{% url 'delete_completed' %}" id="#">Clear Completed</a>
         </nav>
     </form>
 </main>

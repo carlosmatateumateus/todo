@@ -4,5 +4,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('delete/<str:pk>', views.delete, name='delete'),
     path('edit/<str:pk>', views.edit, name='edit'),
-    path('active_completed/<str:pk>', views.active_completed, name='active_completed')
+    path('active_completed/<str:pk>', views.active_completed, name='active_completed'),
+    path('delete_completed', views.delete_completed, name='delete_completed')
 ]

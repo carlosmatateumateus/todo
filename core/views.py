@@ -19,7 +19,7 @@ def home(request):
     return render(request, 'core/home.html', context)
 
 def active_completed(request, pk):
-    
+
     notes = None
     if (pk == 'active'):
           notes = Note.objects.filter(finish=False)
@@ -59,3 +59,11 @@ def edit(request, pk):
 
     context = {'form_edit':form}
     return render(request, 'core/edit.html', context)
+
+def delete_completed(request):
+    notes = Note.objects.filter(finish=True)
+
+    for date in notes:
+        date.delete()
+
+    return redirect('home')
