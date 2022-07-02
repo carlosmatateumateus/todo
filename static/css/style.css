@@ -1,0 +1,148 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+:root{
+    --link_color: rgb(87, 86, 86);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+main{
+    width: 510px;
+    height: 560px;
+}
+
+form#create-note{
+    width: 100%;
+    height: 15%;
+    box-shadow:  0px 0px 1px black;
+    border-radius: 3px;
+    margin-bottom: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    display: none;
+}
+
+form#create-note input#id_title{
+    width: 70%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+
+form#create-note button{
+    width: 18%;
+    height: 40px;
+    
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    background: rgb(49, 167, 49);
+    color: white;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+
+form#todo-list{
+    box-shadow:  0px 0px 1px black;
+    border-radius: 3px;
+    width: 100%;
+    height: 80%;
+}
+
+div#list, nav{
+    width: 100%;
+    background: none;
+    border: none;
+}
+div#list{
+    height: 90%;
+    overflow-y: auto;
+}
+nav{
+    height: 10%;
+    border-top: 1px solid lightgray;
+    color: var(--link_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+nav a{
+    text-decoration: none;
+    color: var(--link_color);
+}
+
+div#list > article{
+    width: 100%;
+    height: 60px;
+
+    border-bottom: 1px solid lightgray;
+
+    display: flex;
+    align-items: center;
+}
+
+article h2{
+    font-size: 1.1em;
+    font-weight: 250;
+}
+article h2#finish{
+    color: darkgray;
+    text-decoration: line-through;
+}
+
+article h2#dont-finish{
+    color: gray;
+}
+
+article > div#text{
+    padding: 10px;
+    width: 90%;
+    height: 100%;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+article > div#modify{
+    width: 10%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+div#container_edit{
+    width: 400px;
+    height: 400px;
+}

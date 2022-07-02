@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+<div id="container_edit">
+    <form action="" method="post" id="create-note">
+        {% csrf_token %}
+        {{form_edit}}
+        <button type="submit">Save</button>
+    </form>
+</div>
+
+{% endblock %}
