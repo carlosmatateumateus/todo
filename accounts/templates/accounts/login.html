@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div id="container-login">
+    <div id="left">
+        <p id="word">Create your todo-list and controll your</p>
+        <p id="word">progress online</p>
+        <img src="{% static 'images/icons8-python-480.svg' %}" alt="launch" id="launch">
+    </div>
+    <div id="right">
+    
+        <div id="buttons">
+            <a href="{% url 'signup' %}"><button id="first">Sign Up</button></a>
+            <a href="{% url 'login' %}"><button id="second">Sign In</button></a>
+        </div>
+    
+        <div id="another">
+    
+            <label for="">USER NAME</label>
+            <input type="email" placeholder="Enter your user name or your email" id="">
+            <label for="" id="pass">PASSWORD</label>
+            <input type="password" placeholder="Enter your password" id="password">
+    
+            <div id="look">
+                <input type="checkbox" id="check" onclick="look('login')">
+                <label for="">Look your password</label>
+            </div>
+    
+            <div id="actions">
+                <button id="login">Login</button>
+                <a href="{% url 'signup' %}">You don't have account?</a>
+            </div>
+    
+        </div>
+    </div>
+</div>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+

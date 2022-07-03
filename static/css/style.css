@@ -5,6 +5,8 @@
 
 :root{
     --link_color: rgb(87, 86, 86);
+    --backgroundColor_left: rgb(23, 148, 142);
+    --backgroundColor_right: rgb(11, 28, 44);
 }
 
 *{
@@ -21,7 +23,6 @@ body{
     align-items: center;
     gap: 10px;
     flex-direction: column;
-    
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
@@ -53,6 +54,7 @@ form#create-note input#id_title{
     border: none;
     outline: none;
     padding-left: 5px;
+    background: none;
 }
 
 form#create-note button{
@@ -61,7 +63,7 @@ form#create-note button{
     
     border-radius: 5px;
     border: 1px solid lightgray;
-    background: rgb(49, 167, 49);
+    background: rgb(68, 151, 177);
     color: white;
     font-weight: bold;
 
@@ -143,9 +145,214 @@ article > div#modify{
     gap: 2px;
 }
 
+.container_accounts{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    background: gray;
+}
+div#image_accounts{
+    width: 50%;
+    height: 100%;
+}
+form#accounts{
+    width: 50%;
+    height: 100%;
+
+    background: rgb(71, 190, 219);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 div#container_edit{
     width: 400px;
     height: 400px;
+}
+
+div#container-login{
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+    background: var(--backgroundColor_right);
+}
+div#left{
+    height: 100vh;
+    width: 50vw;
+
+    background: var(--backgroundColor_left);
+    color: white;
+    font-weight: bold;
+
+}
+
+div#right{
+    height: 100vh;
+    width: 50vw;
+
+    background: var(--backgroundColor_right);
+}
+
+/*Div principal left*/
+
+div#left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    text-align: center;
+}
+div#left > img#launch{
+    height: 60%;
+    width: 60%;
+}
+
+div#left >  p#word{
+    font-size: 1.8em;
+}
+
+/*Div principal right*/
+
+
+/********Buttons********/
+
+div#right > div#buttons{
+    margin-top: 2%;
+    margin-right: 3%;
+    width: 97%;
+    height: 5%;
+    display: flex;
+    justify-content: right;
+}
+
+div#right > div#buttons > a > button#first{
+    height: 30px;
+    width: 90px;
+
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border: none;
+    background: rgba(0, 0, 0, 0.200);
+    color: rgb(180, 179, 179);
+}
+
+div#right > div#buttons > a > button#second{
+    height: 30px;
+    width: 90px;
+
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border: none;
+    background: var(--backgroundColor_left);
+    color: white;
+    box-shadow: 0px 0px 10px black;
+}
+
+div#right > div#buttons > a > button:hover{
+    filter: brightness(40%);
+    cursor: pointer;
+
+    transition: 1.3s;
+}
+
+/*Another part*/
+
+div#right > div#another{
+    height: 93%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+div#right > div#another > div#actions > button#login{
+    width: 130px;
+    height: 32px;
+    border-radius: 20px;
+    border: none;
+    color: white;
+    background: var(--backgroundColor_left);
+    box-shadow: 0px 0px 15px black;
+}
+
+div#right > div#another > div#actions > button#login:hover{
+    transition: 1s;
+    filter: brightness(40%);
+    cursor: pointer;
+}
+
+div#right > div#another > div#actions > a{
+    color: rgb(180, 179, 179);
+    text-decoration: none;
+}
+
+div#right > div#another > div#actions > a:hover{
+    text-decoration: underline;
+}
+
+div#right > div#another > label{
+    width: 70%;
+    font-size: 1em;
+}
+
+div#right > div#another > input{
+    width: 70%;
+    height: 40px;
+    outline: none;
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid rgb(105, 98, 98);
+    color: rgb(180, 180, 180);
+}
+
+div#right > div#another > div#look{
+    width: 70%;
+}
+
+div#right > div#another > label#pass{
+    margin-top: 25px;
+}
+
+div#right > div#another > input#password{
+    margin-bottom: 25px;
+}
+
+div#right > div#another > div#look{
+    margin-bottom: 20px;
+}
+
+div#right > div#another > input#password-confirm{
+    margin-bottom: 25px;
+}
+
+
+
+@media only screen and (max-width: 1000px){
+    body{
+        flex-direction: column;
+        width: 100vw;
+    }
+    div#left{
+        width: 100%;
+        background: var(--backgroundColor_left);
+    }
+    div#right{
+        width: 100%;
+    }
+    #actions{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media only screen and (max-width: 500px){
@@ -161,5 +368,18 @@ div#container_edit{
     }
     nav{
         font-size: 0.7em;
+    }
+    div#list{
+        overflow-x: hidden;
+    }
+    div#container_edit{
+        width: 80%;
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    nav{
+        font-size: 0.5em;
     }
 }

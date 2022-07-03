@@ -9,9 +9,56 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="shortcut icon" href="{% static 'images/favicon-32x32.png' %}" type="image/x-icon">
 </head>
-<body>
+<body id="body">
     {% block content %}
     {% endblock %}
-    <script src="{% static 'code/script.js' %}"></script>
+<script>
+
+    const body = document.getElementById('body');
+    const input_title = document.getElementById('id_title')
+    const create_note = document.getElementById('create-note')
+    const todo_list = document.getElementById('todo-list')
+    const theme_switch = document.getElementById('theme-switch')
+    let theme_color;
+
+    if (localStorage.theme){
+        theme_color = localStorage.theme
+    }
+
+    if (theme_color == 'black'){
+        body.style.transition = '3s'
+        body.style.background = 'rgb(19, 19, 19)'
+        input_title.style.color = 'white'
+        todo_list.style.border = create_note.style.border = '1px solid lightgray'
+        theme_switch.src = '../static/images/icon-sun.svg'
+    }else{
+        body.style.background = ''
+        input_title.style.color = 'black'
+        todo_list.style.border = create_note.style.border = 'none'
+        theme_switch.src = '../static/images/icon-moon.svg'
+    }
+
+    const saveData = (theme) =>{
+        localStorage.setItem('theme', theme)
+    }
+    const switchTheme = () =>{
+        console.log(body.style.background)
+        if (body.style.background == ''){
+            body.style.transition = '3s'
+            body.style.background = 'rgb(19, 19, 19)'
+            input_title.style.color = 'white'
+            todo_list.style.border = create_note.style.border = '1px solid lightgray'
+            theme_color = 'black'
+            theme_switch.src = '../static/images/icon-sun.svg'
+        }else{
+            body.style.background = ''
+            input_title.style.color = 'black'
+            todo_list.style.border = create_note.style.border = 'none'
+            theme_color = 'white'
+            theme_switch.src = '../static/images/icon-moon.svg'
+        }
+        saveData(theme_color)
+    }
+</script>
 </body>
 </html>

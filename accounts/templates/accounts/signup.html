@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<div id="container-login">
+    <div id="left">
+        <p id="word">Plan your code and controll your</p>
+        <p id="word">progress online</p>
+        <img src="{% static 'images/icons8-python-480.svg' %}" alt="launch" id="launch">
+    </div>
+    <div id="right">
+
+        <div id="buttons">
+            <a href="{% url 'signup' %}"><button id="first">Sign Up</button></a>
+            <a href="{% url 'login' %}"><button id="second">Sign In</button></a>
+        </div>
+
+        <div id="another">
+
+            <label for="">Full name</label>
+            <input type="email" placeholder="Enter your full name" id="">
+            <label for="" id="pass">Email</label>
+            <input type="email" placeholder="Enter your email" id="">
+            <label for="" id="pass">Password</label>
+            <input type="password" placeholder="Enter your password" id="password">
+            <label for="" >Confirm your password</label>
+            <input type="password" placeholder="Confirm your password" id="password-confirm">
+            <div id="look">
+                <input type="checkbox" id="check" onclick="look()">
+                <label for="">Look your password</label>
+            </div>
+
+            <div id="actions">
+                <button id="login">Creat</button>
+                <a href="{% url 'login' %}">You have account?</a>
+            </div>
+
+        </div>
+    </div>
+    <script src="{% static 'js/main.js' %}"></script>
+</div>
+<script src="{% static 'js/main.js' %}"></script>
+{% endblock %}
+
